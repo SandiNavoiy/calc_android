@@ -6,6 +6,7 @@ from kivy.uix.textinput import TextInput
 
 class MainApp(App):
     def build(self):
+        #Задаем операторы
         self.operators = ["/", "*", "+", "-"]
         self.last_was_operator = None
         self.last_button = None
@@ -14,6 +15,7 @@ class MainApp(App):
             multiline=False, readonly=True, halign="right", font_size=55
         )
         main_layout.add_widget(self.solution)
+        #список кнопок
         buttons = [
             ["7", "8", "9", "/"],
             ["4", "5", "6", "*"],
@@ -39,6 +41,7 @@ class MainApp(App):
 
         return main_layout
 
+    #метод действий
     def on_button_press(self, instance):
         current = self.solution.text
         button_text = instance.text
